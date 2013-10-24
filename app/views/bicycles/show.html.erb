@@ -1,4 +1,19 @@
-<h1 class="lead"> Stolen Bike Listing: </h1>
+<h1 class="lead title"> Stolen Bike Listing: </h1>
+<%= @bicycle.user.email %>
+<%= image_tag @bicycle.photo.url :medium %>
+<%= @bicycle.date %>
+<%= @bicycle.city %>
+<%= @bicycle.region %>
+<%= @bicycle.country %>
+<%= @bicycle.description %>
+<%= @bicycle.postal_code %>
+<%= @bicycle.serial %>
+<%= @bicycle.verified_ownership %>
+<%= @bicycle.year %>
+<%= @bicycle.brand %>
+<%= @bicycle.model %>
+<%= @bicycle.color %>
+<%= @bicycle.size %><%= @bicycle.size_type %>
 <% if user_signed_in? && current_user == @bicycle.user %>
   <div class='row'>
     <p id='edit-delete'>
@@ -38,7 +53,7 @@
       <tr>
         <td>Location:</td>
         <td>
-          <%= @bicycle.city %>,  
+          <%= @bicycle.city %>,
           <%= @bicycle.region %>
           <%= @bicycle.postal_code %>
         </td>
@@ -69,7 +84,7 @@
       <tr>
         <td>Size:</td>
         <td>
-          <%= @bicycle.size %> 
+          <%= @bicycle.size %>
           <%= @bicycle.size_type %>
         </td>
       </tr>
@@ -78,10 +93,10 @@
       </tr>
       <tr>
         <td>First Name:</td>
-        <td>   
+        <td>
           <% if @bicycle.user.first_name_public %>
             <%= @bicycle.user.first_name %>
-          <% else %>  
+          <% else %>
             <p class="text-muted">private</p>
           <% end %>
         </td>
@@ -90,7 +105,7 @@
         <td>Last Name:</td>
         <td>
           <% if @bicycle.user.last_name_public %>
-            <%= @bicycle.user.last_name %> 
+            <%= @bicycle.user.last_name %>
           <% else %>
             <p class="text-muted">private</p>
           <% end %>
@@ -100,7 +115,7 @@
         <td>
           <% if @bicycle.user.email_public %>
             <%= @bicycle.user.email %>
-          <% else %>  
+          <% else %>
             <p class="text-muted">Email not publicly available.</p>
             <p class="text-muted">Contact <a href="mailto:bhance@gmail.com">S.B.R. admin</a> with questions regarding this listing<p>
           <% end %>
