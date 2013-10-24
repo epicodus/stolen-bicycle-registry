@@ -13,7 +13,7 @@ class Bicycle < ActiveRecord::Base
   validates :region, presence: true, inclusion: { in: Geography::PROVINCES + Geography::STATES }
   validates :city, presence: true
   validates :description, presence: true, length: { minimum: 30, maximum: 2000 }
-  validates :size_type, inclusion: { in: %w( cm in ) }
+  validates :size_type, :inclusion => { :in => %w( cm in ) }, allow_blank: true
   validates :serial, uniqueness: true, allow_nil: true, allow_blank: true
   validates_with StringYearValidator
   # validates :year, numericality: true, inclusion: { in: (0..2100) }, allow_nil: true

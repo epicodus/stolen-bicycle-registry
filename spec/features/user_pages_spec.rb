@@ -10,7 +10,7 @@ feature 'User pages' do
   scenario 'the user tries to register a bike and is redirected to the login page' do
     visit new_bicycle_path
     uri = URI.parse(current_url)
-    "#{uri.path}".should == new_user_session_path
+    "#{uri.path}".should == sign_in_path
   end
 
   scenario 'after being redirected and logging in, they are redirected back' do
@@ -39,11 +39,11 @@ feature 'User pages' do
     fill_in 'Email', with: american_user.email
     select('United States', from: 'user_country')
     fill_in 'City', with: american_user.city
-    select('OR', from: 'State')
+    select('OR', from: 'user_region')
     fill_in 'Zip Code', with: american_user.postal_code
     fill_in 'Phone', with: american_user.phone1
-    fill_in 'Password (min 8 char.)', with: american_user.password
-    fill_in 'Password Confirmation', with: american_user.password
+    fill_in 'Minimum 8 char.', with: american_user.password
+    fill_in 'Confirm password', with: american_user.password
     click_button 'Sign up'
     uri = URI.parse(current_url)
     "#{uri.path}".should == new_bicycle_path
