@@ -8,7 +8,6 @@
       </p>
   <% end %>
 </div>
-
 <div class="row">
   <div class='col-md-4'>
     <table class="table table-bordered">
@@ -29,7 +28,27 @@
         <td><%= @bicycle.description %></td>
       </tr>
       <tr>
-        <td align="center"><h3>Have you seen me? Email us now if you have any info on my whereabouts.<h3><a href="mailto:bhance@gmail.com" class="btn btn-success btn-lg"> FOUND IT!</button></td>
+        <td>
+          <p>
+            Tweet this listing!
+          </p>
+          <a href="https://twitter.com/share"
+              class="twitter-share-button"
+              data-text="Help find this bike:"
+              data-via="StolenBikeReg">
+              Tweet
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <h3 class="lead">
+            Have you seen me? Email us now if you have any info on my whereabouts.
+          </h3>
+          <a href="mailto:bhance@gmail.com" class="btn btn-success btn-lg">
+           FOUND IT!
+          </button>
+        </td>
       </tr>
     </table>
   </div>
